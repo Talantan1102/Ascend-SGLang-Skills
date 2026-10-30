@@ -55,7 +55,7 @@ cp "$SKILLS_REPO"/skills/sglang-npu-adapter/opencode/agent/*.md "$PROJECT/.openc
 
 安装后重启 OpenCode，并从业务项目根目录打开它。
 
-![安装结果：Skill 文件完整、四个 Agent 已安装并被 OpenCode 发现](assets/01-install-result.png)
+![安装结果：Skill 文件完整、四个 Agent 已安装并被 OpenCode 发现](https://raw.githubusercontent.com/Talantan1102/Ascend-SGLang-Skills/main/skills/sglang-npu-adapter/opencode/assets/01-install-result.png)
 
 本机实测结果：Skill 源目录和目标目录各有 60 个文件，SHA-256 目录校验一致；四个 Agent 均被识别为项目级 subagent。
 
@@ -111,7 +111,7 @@ mv "$PROJECT/.opencode/agents/"{architecture-analyst,debug-engineer,precision-rc
 
 重启 OpenCode 后，`sglang-npu-adapter` 和四个 Agent 应不再出现。确认不需要恢复后，再删除 `.opencode-disabled/sglang-npu-adapter`。
 
-![更新与卸载结果：备份完整，移出扫描目录后 OpenCode 不再发现该 Skill](assets/02-lifecycle-result.png)
+![更新与卸载结果：备份完整，移出扫描目录后 OpenCode 不再发现该 Skill](https://raw.githubusercontent.com/Talantan1102/Ascend-SGLang-Skills/main/skills/sglang-npu-adapter/opencode/assets/02-lifecycle-result.png)
 
 ## 5. 成功调用 Skill
 
@@ -127,7 +127,7 @@ mv "$PROJECT/.opencode/agents/"{architecture-analyst,debug-engineer,precision-rc
 
 判断成功不能只看回答中是否出现 Skill 名称，还要看 OpenCode 是否真的产生了 `skill` 工具调用，并且状态为 `completed`。
 
-![成功调用结果：skill 工具加载完成，OpenCode 正确回答 Step 0 和所需输入](assets/03-skill-call-success.png)
+![成功调用结果：skill 工具加载完成，OpenCode 正确回答 Step 0 和所需输入](https://raw.githubusercontent.com/Talantan1102/Ascend-SGLang-Skills/main/skills/sglang-npu-adapter/opencode/assets/03-skill-call-success.png)
 
 本机实测中，OpenCode 实际加载了 `sglang-npu-adapter`，正确读出 Step 0 为“初始化”，所需输入为 `WORKSPACE_DIR`、`ModelName` 和 `ModelPath`。本次只验证 Skill 加载，没有运行模型适配脚本，也没有连接 NPU 环境。
 
